@@ -22,7 +22,7 @@ class Media(BaseModel):
         verbose_name_plural = "Media"
 
     def __str__(self):
-        return self.file.name
+        return self.name
     
 
 class State(models.Model):

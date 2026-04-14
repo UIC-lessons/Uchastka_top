@@ -36,9 +36,9 @@ class EstateAgentAdmin(admin.ModelAdmin):
 @admin.register(Estate)
 class EstateAdmin(admin.ModelAdmin):
     list_display = [
-        "name", "agent", "category","state","region","area", "price", "currency", "longitude", "latitude", "description", "garage"
+        "name", "agent", "category","state","region","area", "price", "currency", "longitude", "latitude", "description", "garage",
     ]
-
+    filter_horizontal = ("images", "amenities")
     search_fields = [
         "name", "category", "state", "region"
     ]
