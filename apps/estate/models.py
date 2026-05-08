@@ -10,7 +10,7 @@ class Estate_Agent(BaseModel):
     name = models.CharField(verbose_name="Agent name", max_length=50)
     last_name = models.CharField(verbose_name="Agent last name", max_length=50)
     bio = models.TextField(verbose_name="Agent bio", blank=True, null=True)
-    avatar = models.ManyToManyField("common.Media", verbose_name = "Avatar",blank=True, related_name="agents")
+    avatar = models.ForeignKey("common.Media", verbose_name = "Avatar", on_delete=models.CASCADE, blank=True, related_name="agents")
     phone = models.CharField(verbose_name="phone", max_length=255)
     mobile = models.CharField(verbose_name="mobile phone", max_length=255, null=True, blank=True)
     email = models.EmailField(verbose_name="Email")

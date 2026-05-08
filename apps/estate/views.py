@@ -4,7 +4,7 @@ from apps.estate.models import Estate
 
 
 def home(request):
-    estates = Estate.objects.prefetch_related("images").filter().order_by("-price")[:3]
+    estates = Estate.objects.prefetch_related("images").order_by("-price")[:3]
     context = {"estates": estates, }
     return render(request, "index.html", context=context)
 

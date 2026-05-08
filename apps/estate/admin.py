@@ -36,17 +36,16 @@ class EstateAgentAdmin(admin.ModelAdmin):
 @admin.register(Estate)
 class EstateAdmin(admin.ModelAdmin):
     list_display = [
-        "name", "agent", "category","state","region","area", "price", "currency", "longitude", "latitude", "description", "garage",
+        "name", "agent", "category","state","region","area", "price", "currency", "longitude", "latitude", "description", "garage"
     ]
-    filter_horizontal = ("images", "amenities")
     search_fields = [
         "name", "category", "state", "region"
     ]
 
     fields = [
-        "name", "agent", "category" , "state" , "region" , "address" , "status" , "area" , "beds" , "bath" , "price", "currency", "longitude", "latitude", "description", "amenities", "garage"
+        "name", "agent", "category" , "state" , "region" , "address" , "status" , "area" , "beds" , "bath" , "price", "currency", "longitude", "latitude", "description", "amenities", "garage", "images"
     ]
-
+    filter_horizontal = ["images", "amenities"]
 
 @admin.register(EstateCategory)
 class EstataCategoryAdmin(admin.ModelAdmin):

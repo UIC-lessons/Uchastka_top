@@ -3,7 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 def media_upload_to( _instance, filename):
-    return timezone.now().strftime(f"media/%Y/%M/%D{filename}")
+    return timezone.now().strftime(f"media/%Y/%m/%d/{filename}")
 
 
 class BaseModel(models.Model):
@@ -22,7 +22,7 @@ class Media(BaseModel):
         verbose_name_plural = "Media"
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     
 
 class State(models.Model):
